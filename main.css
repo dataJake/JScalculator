@@ -1,0 +1,192 @@
+#page {
+    margin: auto;
+    width: 100%;
+    background-color: #4ABDAD /*#0B1915*/;
+    height: 100vh;
+}
+
+#buffer {
+    height:100px;
+    width: 100%;
+}
+
+#button_grid {
+    display: grid;
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    border: 4px solid black;
+    border-radius: 0 0 10px 10px;
+}
+
+button {
+    font-size: 30px;
+    font-family: 'Play', sans-serif;
+    background-color: #E0DCE4 /*#1C292F*/;
+    color: #FF491C /*#F7CF42*/;
+    border: 1px solid black;
+    transition: opacity .25s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#display {
+    font-size: 50px;
+    font-family: 'Play', sans-serif;
+    background-color: #E0DCE4;
+    color: white;
+    text-align: right;
+    border: 5px solid #63502C;
+    border-top: 15px solid #63502C;
+    grid-column: span 4;
+    grid-row: span 1;
+    /*border-radius: 10px 10px 0 0;*/
+}
+h2 {
+    margin: auto;
+}
+
+#clearAll {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #63502C;
+    border-top: 1px solid #63502C;
+    border-left: 1px solid #63502C;
+    border-right: 2px solid black;
+}
+
+#posNeg {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #63502C;
+    border-top: 1px solid #63502C;
+    border-right: 2px solid black;
+}
+
+#percent {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #63502C;
+    border-top: 1px solid #63502C;
+    border-right: 2px solid black;
+}
+
+#divide {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #F8B733 /*#56705E*/;
+    border-right: 1px solid #F8B733;
+    border-top: 1px solid #F8B733;
+}
+
+#seven {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-right: 2px solid black;
+}
+
+#eight {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-right: 2px solid black;
+}
+
+#nine {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-right: 2px solid black;
+}
+
+#multiply {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #F8B733 /*#56705E*/;
+    border-right: 1px solid #F8B733;
+    border-top: 1px solid black;
+}
+
+#four {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#five {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#six {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#minus {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #F8B733 /*#56705E*/;
+    border-right: 1px solid #F8B733;
+    border-top: 1px solid black;
+}
+
+#one {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#two {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#three {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#plus {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #F8B733 /*#56705E*/;
+    border-right: 1px solid #F8B733;
+    border-top: 1px solid black;
+}
+
+#zero {
+    grid-column: span 2;
+    grid-row: span 1;
+    border-radius: 0 0 0 5px;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#decimal {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+}
+
+#equals {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-radius: 0 0 5px 0;
+    background-color: #F8B733 /*#56705E*/;
+    border-right: 1px solid #F8B733;
+    border-top: 1px solid black;
+}
