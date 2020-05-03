@@ -42,8 +42,11 @@ button:hover {
     text-align: right;
     border: 5px solid #63502C;
     border-top: 15px solid #63502C;
+    border-bottom: 10px solid #63502C;
     grid-column: span 4;
     grid-row: span 1;
+    padding-right: 5px;
+    line-height: 70px;
     /*border-radius: 10px 10px 0 0;*/
 }
 h2 {
@@ -54,8 +57,8 @@ h2 {
     grid-column: span 1;
     grid-row: span 1;
     background-color: #63502C;
-    border-top: 1px solid #63502C;
-    border-left: 1px solid #63502C;
+    border-top: 2px solid black;
+    border-left: 1px solid black;
     border-right: 2px solid black;
 }
 
@@ -63,7 +66,7 @@ h2 {
     grid-column: span 1;
     grid-row: span 1;
     background-color: #63502C;
-    border-top: 1px solid #63502C;
+    border-top: 2px solid black;
     border-right: 2px solid black;
 }
 
@@ -71,7 +74,7 @@ h2 {
     grid-column: span 1;
     grid-row: span 1;
     background-color: #63502C;
-    border-top: 1px solid #63502C;
+    border-top: 2px solid black;
     border-right: 2px solid black;
 }
 
@@ -80,7 +83,7 @@ h2 {
     grid-row: span 1;
     background-color: #F8B733 /*#56705E*/;
     border-right: 1px solid #F8B733;
-    border-top: 1px solid #F8B733;
+    border-top: 2px solid black;
 }
 
 #seven {
