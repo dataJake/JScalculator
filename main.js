@@ -1,14 +1,10 @@
 var numDisplay = document.getElementById('display_Text');
-var negButton = document.getElementById('posNeg');
+
 var percentButton = document.getElementById('percent');
 var divideButton = document.getElementById('divide');
-
 var multButton = document.getElementById('multiply');
-
-
 var minusButton = document.getElementById('minus');
 var plusButton = document.getElementById('plus');
-
 var decimalButton = document.getElementById('decimal');
 var equalsButton = document.getElementById('equals');
 
@@ -30,7 +26,15 @@ clearButton.addEventListener('click', clickClear);
 
 /* 1 button script*/
 var clickButton = function() {
-    if (numDisplay.innerText === "0"){
+    /*Need to refactor this to account for length changes
+    /*if (displayContent.includes(".")){
+      if (this.value !== ".") {
+        storeNumber += this.value;
+        displayContent = storeNumber;
+        numDisplay.innerText = displayContent;
+      }
+    }*/
+    else if (numDisplay.innerText === "0"){
       storeNumber = this.value;
       displayContent = storeNumber;
       numDisplay.innerText = displayContent;
@@ -96,3 +100,21 @@ nineButton.addEventListener('click', clickButton);
 
 var zeroButton = document.getElementById('zero');
 zeroButton.addEventListener('click', clickButton);
+
+var decimalButton = document.getElementById('decimal');
+decimalButton.addEventListener('click', clickButton);
+
+
+var clickNegPos = function() {
+  if(displayContent.charAt(0) === "-"){
+    displayContent = displayContent.substring(1);
+    numDisplay.innerText = displayContent;
+  }
+  else {
+    displayContent = "-" + displayContent;
+    numDisplay.innerText = displayContent;
+  }
+}
+
+var negButton = document.getElementById('posNeg');
+negButton.addEventListener('click', clickNegPos);
