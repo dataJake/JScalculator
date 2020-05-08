@@ -1,25 +1,11 @@
 var numDisplay = document.getElementById('display_Text');
 
-var percentButton = document.getElementById('percent');
-var divideButton = document.getElementById('divide');
-var multButton = document.getElementById('multiply');
-var minusButton = document.getElementById('minus');
-var plusButton = document.getElementById('plus');
-<<<<<<< HEAD
-
-
-=======
-var decimalButton = document.getElementById('decimal');
->>>>>>> 36514351583907aceac0850558a64b6bf510ea11
-var equalsButton = document.getElementById('equals');
-
-
 var storeNumber = "";
 
 var displayContent = "0";
 
 
-/* AC button script*/
+// AC button script
 var clearButton = document.getElementById('clearAll');
 var clickClear = function() {
     storeNumber = "0";
@@ -29,67 +15,18 @@ var clickClear = function() {
 clearButton.addEventListener('click', clickClear);
 
 
-/* 1 button script*/
+// number button script
 var clickButton = function() {
-<<<<<<< HEAD
 
-
-        /*Need to figure out how to program this "." button to display properly*/
-
-
-        if (numDisplay.innerText === "0") {
-            storeNumber = this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else if (numDisplay.innerText.includes(".")) {
-            storeNumber += this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else if (storeNumber.length === 3){
-            storeNumber = storeNumber.substring(0, 1) + "," + storeNumber.substring(1) + this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else if (storeNumber.length === 5) {
-            storeNumber = storeNumber.substring(0, 1) + storeNumber.substring(2, 3) + "," + storeNumber.substring(3, 5) + this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else if (storeNumber.length === 6) {
-            storeNumber = storeNumber.substring(0, 2) + storeNumber.substring(3, 4) + "," + storeNumber.substring(4, 6) + this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else if (storeNumber.length === 7) {
-            storeNumber = storeNumber.substring(0, 1) +  "," + storeNumber.substring(1,3) + storeNumber.substring(4,5) + "," + storeNumber.substring(5, 7) + this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else if (storeNumber.length === 9) {
-            storeNumber = storeNumber.substring(0, 1) + storeNumber.substring(0, 1) + "," + storeNumber.substring(3, 5) + storeNumber.substring(6, 7) + "," + storeNumber.substring(7, 9) + this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-        else {
-            storeNumber += this.value;
-            displayContent = storeNumber;
-            numDisplay.innerText = displayContent;
-        }
-=======
-    /*Need to refactor this to account for length changes
-    /*if (displayContent.includes(".")){
-      if (this.value !== ".") {
+    if (numDisplay.innerText === "0") {
+        storeNumber = this.value;
+        displayContent = storeNumber;
+        numDisplay.innerText = displayContent;
+    }
+    else if (numDisplay.innerText.includes(".")) {
         storeNumber += this.value;
         displayContent = storeNumber;
         numDisplay.innerText = displayContent;
-      }
-    }*/
-    else if (numDisplay.innerText === "0"){
-      storeNumber = this.value;
-      displayContent = storeNumber;
-      numDisplay.innerText = displayContent;
     }
     else if (storeNumber.length === 3){
         storeNumber = storeNumber.substring(0, 1) + "," + storeNumber.substring(1) + this.value;
@@ -110,9 +47,20 @@ var clickButton = function() {
         storeNumber = storeNumber.substring(0, 1) +  "," + storeNumber.substring(1,3) + storeNumber.substring(4,5) + "," + storeNumber.substring(5, 7) + this.value;
         displayContent = storeNumber;
         numDisplay.innerText = displayContent;
->>>>>>> 36514351583907aceac0850558a64b6bf510ea11
     }
+    else if (storeNumber.length === 9) {
+        storeNumber = storeNumber.substring(0, 1) + storeNumber.substring(0, 1) + "," + storeNumber.substring(3, 5) + storeNumber.substring(6, 7) + "," + storeNumber.substring(7, 9) + this.value;
+        displayContent = storeNumber;
+        numDisplay.innerText = displayContent;
+    }
+    else {
+        storeNumber += this.value;
+        displayContent = storeNumber;
+        numDisplay.innerText = displayContent;
+    }
+}
 
+//Decimal button script
 var clickDecimal = function() {
     if (displayContent === "0"){
         storeNumber = "0.";
@@ -125,6 +73,38 @@ var clickDecimal = function() {
         numDisplay.innerText = displayContent;
     }
 }
+
+// Positive/negative button script
+var clickNegPos = function() {
+    if (displayContent !== "0") {
+        if(displayContent.charAt(0) === "-"){
+            displayContent = displayContent.substring(1);
+            numDisplay.innerText = displayContent;
+        }
+        else {
+            displayContent = "-" + displayContent;
+            numDisplay.innerText = displayContent;
+        }
+    }
+}
+
+/* Math operator script
+var clickOperator = function() {
+    if (storeNumber.includes("+") || storeNumber.includes("-") || storeNumber.includes("*") || storeNumber.includes("/")) {
+        clickEquals();
+        storeNumber += this.value;
+    }
+    else {
+        storeNumber += this.value;
+    }
+}
+
+// Equals operator script
+var clickEquals = function() {
+    storeNumber = eval(storeNumber);
+    displayContent = storeNumber;
+    numDisplay.innerText = displayContent;
+}*/
 
 
 var oneButton = document.getElementById('one');
@@ -158,23 +138,26 @@ var zeroButton = document.getElementById('zero');
 zeroButton.addEventListener('click', clickButton);
 
 var decimalButton = document.getElementById('decimal');
-<<<<<<< HEAD
 decimalButton.addEventListener('click', clickDecimal);
-=======
-decimalButton.addEventListener('click', clickButton);
+
+var plusButton = document.getElementById('plus');
+plusButton.addEventListener('click', clickOperator);
+
+var subtractButton = document.getElementById('minus');
+subtractButton.addEventListener('click', clickOperator);
+
+var multiplyButton = document.getElementById('multiply');
+multiplyButton.addEventListener('click', clickOperator);
+
+var divideButton = document.getElementById('divide');
+divideButton.addEventListener('click', clickOperator);
+
+var equalsButton = document.getElementById('equals');
+equalsButton.addEventListener('click', clickEquals);
+
+var percentButton = document.getElementById('percent');
 
 
-var clickNegPos = function() {
-  if(displayContent.charAt(0) === "-"){
-    displayContent = displayContent.substring(1);
-    numDisplay.innerText = displayContent;
-  }
-  else {
-    displayContent = "-" + displayContent;
-    numDisplay.innerText = displayContent;
-  }
-}
 
 var negButton = document.getElementById('posNeg');
 negButton.addEventListener('click', clickNegPos);
->>>>>>> 36514351583907aceac0850558a64b6bf510ea11

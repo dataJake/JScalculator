@@ -2,7 +2,7 @@
     margin: auto;
     width: 100%;
     background-color: #4ABDAD /*#0B1915*/;
-    height: 800px;
+    height: 100vh;
 }
 
 #buffer {
@@ -22,7 +22,7 @@
 }
 
 button {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Play', sans-serif;
     background-color: #E0DCE4 /*#1C292F*/;
     color: #FF491C /*#F7CF42*/;
