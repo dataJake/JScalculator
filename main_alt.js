@@ -2,45 +2,40 @@ var numDisplay = document.getElementById('display_Text');
 
 var storeNumber1 = "";
 var storeNumber2 = "";
+var storeNumber3 = "";
 var displayContent = "0";
 
 
 // AC button script
-var clearButton = document.getElementById('clearAll');
 var clickClear = function() {
     storeNumber1 = "0";
     displayContent = storeNumber1;
     numDisplay.innerText = displayContent;
 }
-clearButton.addEventListener('click', clickClear);
 
-
-// Number button script
 var updateDisplay = function() {
-    storeNumber2 = eval(storeNumber1);
-    displayContent = parseFloat(storeNumber2)/*storeNumber1*/.toLocaleString('en-US');
-    numDisplay.innerText = displayContent;
-}
-
-// Math operator script
-var clickOperator = function() {
-    storeNumber1 = storeNumber1.toString();
-    if (storeNumber1.includes("+") || storeNumber1.includes("-") || storeNumber1.includes("*") || storeNumber1.includes("/")){
-        updateDisplay();
-        storeNumber1 += " " + this.value + " ";
+    if (storeNumber.includes('.'){
+        let afterDecimal = storeNumber.substring(indexOf('.'));
+        let remainingString = storeNumber.substring(0, indexOf('.'));
+        let reformString = "";
+        while (remainingString.length >= 4){
+            reformString = (',' + remainingString.substring(-3)) + reformString;
+            remainingString = remainingString.Substring(0, -3);
+        }
+        numDisplay.innerText = reformString + afterDecimal;
     }
     else {
-        storeNumber1 += storeNumber1 += " " + this.value + " ";
-
+        let remainingString = storeNumber;
+        let reformString = "";
+        while (remainingString.length >= 4){
+            reformString = (',' + remainingString.substring(-3)) + reformString;
+            remainingString = remainingString.Substring(0, -3);
+        }
+        numDisplay.innerText = reformString;
     }
 }
 
-// Equals operator script
-var clickEquals = function() {
-    /*storeNumber1 = eval(storeNumber1);
-    displayContent = storeNumber1;
-    numDisplay.innerText = displayContent;*/
-}
+
 
 
 var clickButton = function() {
@@ -49,38 +44,47 @@ var clickButton = function() {
         updateDisplay();
     }
     else {
-        storeNumber1 += this.value;
+        storeNumber += this.value;
         updateDisplay();
     }
 }
 
-// Decimal button script
+
+
 var clickDecimal = function() {
-    if (displayContent === "0"){
+    if (storeNumber1 === "0"){
         storeNumber1 = "0.";
-        updateDisplay();
     }
     else if (numDisplay.innerText.includes(".") === false){
         storeNumber1 += this.value;
-        updateDisplay();
     }
 }
 
-// Positive/negative button script
 var clickNegPos = function() {
     if (displayContent !== "0") {
-        if(storeNumber1.charAt(0) === "-"){
-            storeNumber1 = storeNumber1.substring(1);
-            updateDisplay();
+        if(displayContent.charAt(0) === "-"){
+            displayContent = displayContent.substring(1);
+            numDisplay.innerText = displayContent;
         }
         else {
-            storeNumber1 = "-" + storeNumber1;
-            updateDisplay();
+            displayContent = "-" + displayContent;
+            numDisplay.innerText = displayContent;
         }
     }
 }
 
+// Math operator script
+var clickOperator = function() {
 
+}
+
+// Equals operator script
+var clickEquals = function() {
+
+}
+
+var clearButton = document.getElementById('clearAll');
+clearButton.addEventListener('click', clickClear);
 
 var oneButton = document.getElementById('one');
 oneButton.addEventListener('click', clickButton);
